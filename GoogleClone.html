@@ -1,0 +1,81 @@
+<!--
+  Title: Google Clone
+  Author: Brittny Eaddy
+  Date: 10/3/20
+  Purpose: To replicate Google home page.
+-->
+<!DOCTYPE html>
+ <html>
+  <head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+      
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="GoogleClone.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Roboto Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+    crossorigin="anonymous">
+      
+    <!--JavaScript-->
+    <script src="GoogleClone.js"></script>
+  </head>
+  <body>
+    <!--Top Nav-->
+    <div class="topnav container-fluid">
+      <a href="#">About</a> 
+      <a href="#">Store</a>
+      <div class="right">
+      <a href="#">Gmail</a>
+      <a href="#">Images</a>
+      <a><img src="grid_button.png" style="width:25px;height:25px;" id="grid"></a>
+      <button type="button" class="btn btn-primary btn-sm mt-1 mr-1 ml-2 pr-2 pl-2" id="signin" style="font-size: 12.5px;"><strong>Sign in</strong></button> 
+      </div>
+    </div>
+      
+    <!--Logo-->
+    <div class="container-fluid">
+      <a><img src="google.jpg" alt="Google Logo" style="width:330px;height:215px;" id="logo"></a>  
+    </div>
+    
+    <!--Searchbar-->
+    <div class="container-fluid">
+      <div class="main">
+      <div class="form-group has-search">
+        <i class="fa fa-search form-control-feedback"></i>
+        <i class="fa fa-microphone" id="mic"></i>
+        <input type="text" class="form-control" id="searchbar">
+      </div>
+    </div>  
+    </div>
+    
+    <!--Buttons-->
+    <br>
+    <div class="container-fluid">
+     <div class="col text-center">
+      <button type="button" class="btn btn-light btn-sm mt-5 p-2">Google Search</button>
+      <button type="button" class="btn btn-light btn-sm mt-5 p-2" onmouseover="this.innerHTML = randomAdj();" 
+      onmouseout="normal();">I'm Feeling Lucky</button>
+    </div>  
+    </div>
+      
+     <!--Footer-->
+    <footer class="container-fluid">
+      <a href="#">Advertising</a>
+      <a href="#">Business</a>
+      <a href="#">How Search works</a>
+      <div class="right">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Settings</a>  
+      </div>
+    </footer>
+  </body>
+</html>
