@@ -1,155 +1,254 @@
 /*
   Title: Google Clone Style Sheet
   Author: Brittny Eaddy
-  Date: 9/19/20
-  Purpose: To format Google home page. 
+  Date: 10/31/20
+  Purpose: To format Google home page for desktop and mobile devices with landscape and 
+    portrait orientations. 
 */
+
+* {
+  box-sizing: border-box;
+}
 
 /* Body Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 /* Link Styles */
 a:link {
   color: black;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875em;
+  margin-left: 0.625em;
+  margin-right: 0.3125em;
+  margin-top: 0.625em;
   text-decoration: none;
-  margin-top: 10px;
-  margin-right: 5px;
-  margin-left: 10px;
-  font-size: 14px;
 }
 
 a:visited {
   color: black;
 }
 
-a {
-  font-family: 'Roboto', sans-serif;
-}
-
 /* Topnav Styles */
 .topnav {
-  padding-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  padding-top: 0.9375em;
+}
+
+.topnav a, #gmail, #images {
+  color: black;
+  font-size: 0.8125em;
+  padding-left: 0.3125em;
+  padding-top: 1.375em;
+}
+
+.topnav a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#navicon {
+  display: none;
+}
+
+/* Styles for All/Images Tabs (Mobile Only) */
+.alt a {
+  display: none;
+  font-size: 0.75em;
+  font-weight: bolder;
+  padding-left: 0.3125em;
+  padding-right: 0.3125em;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.alt a:active {
+  border-bottom: 0.1875em solid #0080ff;
+  color: #0080ff;
+  padding: 0em 0.375em 1.1em 0.375em;
+}
+
+.alt a:hover {
+  text-decoration: none;
 }
 
 .right { 
   float: right;
 }
 
-a.topnav, .topnav .right a {
-  padding-top: 22px;
-  font-size: small;
-  padding-left: 5px
-}
-
-.topnav a:hover {
-  text-decoration: underline;
-  color: black;
-}
-
 /* Logo Styles */
 #logo, button, textarea {
   display: block;
-  margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5.625em;
   z-index: 1;
 }
 
 #logo {
-  margin-bottom: -40px;
-  margin-top: 40px;
+  margin-bottom: -2.5em;
+  margin-top: 2.5em;
   max-width: 100%;
-  height: auto;
-
 }
 
-/* Searchbar Style */
-.main {
-  width: 38%;
-  margin: auto;
-}
-
-.has-search .form-control {
-  padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-  position: absolute;
-  z-index: 3;
+/* Searchbar Styles; styles icons inside searchbar */
+input[type=text] {
+  background: url("magnifyer.png") left no-repeat, url("googlemic.png") right no-repeat;
+  background-color: white;
+  background-origin: content-box;
+  background-size: 1.125em 1.125em;
+  border: 0.0625em solid lightgrey;
+  border-radius: 1.5625em;
   display: block;
-  width: 2.375rem;
-  height: 2.375rem;
-  line-height: 2.375rem;
-  text-align: center;
-  pointer-events: none;
-  color: #aaa;
-}
-
-/* Mic Style */
-#mic {
-  position: absolute;
-  z-index: 3;
-  width: 2.375rem;
-  height: 2.375rem;
-  line-height: 2.375rem;
-  text-align: right;
-  pointer-events: none;
-  display: inline;
-  margin-left: 510px
-}
-
-#searchbar {
-  width: 570px;
-  height: 45px;
-  border-radius: 25px;
-  border: 1px solid lightgrey;
-  position: fixed;
+  height: 2.8125em;
   margin: auto;
-  z-index: 2;
+  margin-bottom: -0.9375em;
+  margin-top: -2.5em;
+  max-width: 31.25em;
+  position: relative;
+  z-index: 0; 
 }
 
-#searchbar:hover {
-  box-shadow: 0 2px 2px 0 rgba(230, 230, 230, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+/* Styles searchbar shadow on hover */
+input[type=text]:hover {
+  box-shadow: 4px 4px 10px rgba(230, 230, 230, 0.24);
 }
 
-/*Footer Styles*/
+/* Footer Styles */
 footer {
   background-color: #f2f2f2;
-  color: #e6e6e6;
-  position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  padding: 10px;
+  color: #e6e6e6;
+  max-width: 100%;
+  padding: 0.625em;
+  position: fixed;
 }
 
-footer a:link, footer .right a:link {
-  color: #666666;
+/* Displays About option in footer on mobile devices */
+#about {
+  display: none;
 }
 
-/* Tablet Styles */
+/* Footer Links Styles */
+.container-fluid>a, .container-fluid>.right>a, .container-fluid>a:hover, .container-fluid>.right>a:hover {
+  color:#666666;
+}
 
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) and (max-width: 992px) {
-    footer, .container-fluid .right {
+/* Responsive Web Design Styles */
+/* For mobile devices with screen size no larger than 600px */
+@media only screen and (max-width: 600px) {
+    /* Searchbar Sty;es */
+    input[type=text] {
+      margin-top: -2.5em;
+      max-width: 25.9375em;
+    }
+    
+    /* Footer Styles causes options to stack on top of one another*/
+    footer, footer>.right {
+      float: none;
       text-align: center;
     }
     
-    #searchbar {
-      width: 60%;
-      display: block;
-      margin-right: auto;
-      margin-left: auto;
+    footer>.right {
+      padding-top: 0.9375em;
+    }   
+}
+
+/* For devices larger than 600px */
+@media only screen and (max-device-width: 600px) {
+    /* Top Nav Styles */
+    #gmail, #images, .container-fluid button, .left a, #how {
+      display: none;
     }
     
-    .btn btn-light, #logo, #searchbar {
-      display: block;
-      margin-right: auto;
-      margin-left: auto;
+    .alt a, #about {
+      display: inline;
+    }
+    
+    /* Top Nav Icon Styles */
+    #signin, #navicon, #grid {
+      display: inline;
+      vertical-align: top;
+    }
+    
+    #grid {
+      margin-top: -4px;  
+    }
+    
+    /* Signin Button Styles */
+    #signin {
+      margin-top: -0.75em!important;
+      padding: 0.625em;
+      width: 7em;
+    }
+    
+    /* Logo Styles */
+    #logo {
+      max-width: 11.25em;
+      max-height: 7.5em;
+      margin-bottom: 2.5em;
+    }
+    
+    /* Searchbar Styles */
+    input[type=text] {
+      width: 95%;
+    }
+    
+}
+
+/* Landscape Styles */
+@media only screen and (max-device-width: 700px) and (orientation: landscape) { 
+    /* Top Nav Styles */
+    #gmail, #images, .container-fluid button, .left a, #how {
+      display: none;
+    }
+    
+    .alt a, #about {
+      display: inline;
+    }
+    
+    /* Top Nav Icon Styles */
+    #signin, #navicon, img#grid {
+      display: inline;
+      vertical-align: top;
+    }
+    
+    #grid {
+      margin-top: -4px;  
+    }
+    
+    #signin {
+      margin-top: -0.75em!important;
+      padding: 0.625em;
+      width: 7em;
+    }
+    
+    /* Logo Styles */
+    #logo {
+      max-width: 11.25em;
+      max-height: 7.5em;
+      margin-bottom: 2.5em;
+    }
+    
+    /* Searchbar Styles */
+    input[type=text] {
+      width: 95%;
+    }
+    
+    /* Footer Styles */
+    footer, footer>.right {
+      text-align: center;
+      float: none;
+    }
+    
+    footer>.right {
+      padding-top: 0.9375em;
+    } 
+    
+    .alt {
+      vertical-align: top;
+      margin-bottom: 3.125em;
     }
 }
